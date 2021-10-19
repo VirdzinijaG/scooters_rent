@@ -1,7 +1,58 @@
 import "../App.css";
-import logo from "../logo.png"
+import logo from "../logo.png";
+import { useEffect, useState } from "react"
 
-function Scooter({ scooter, deleteScooter}) {
+function Scooter({ scooter, deleteScooter, editScooter, id }) {
+
+
+    const [useTime, setUseTime] = useState('');
+    const [ride, setRide] = useState('');
+    const [is_busy, setIsBusy] = useState(0);
+
+
+
+    useEffect(() => {
+        setUseTime(scooter.last_use_time);
+        setRide(scooter.total_ride_kilometres);
+        setIsBusy(scooter.is_busy);
+    }, [scooter]);
+
+    const control = (e, what) => {
+        switch (what) {
+            case "last_use_time":
+                setUseTime(e.target.value);
+                break;
+            case "total_ride_kilometres":
+                setRide(e.target.value);
+                break;
+            case "is_busy":
+                setIsBusy(e.target.value);
+                break;
+        }
+    };
+
+    const edit = (id) => {
+        editScooter(id, {
+            last_use_time: useTime,
+            total_ride_kilometres: ride,
+            is_busy: is_busy,
+        });
+        setUseTime("");
+        setRide("");
+        setIsBusy(0);
+    };
+
+    const isChecked = () => {
+        if (is_busy === 1) {
+            setIsBusy(0);
+        } else {
+            setIsBusy(1);
+        }
+    };
+
+    if (id === 0) {
+        return null;
+    }
 
     const d = new Date(scooter.last_use_time);
     let month = "00" + (d.getMonth() + 1);
@@ -21,30 +72,34 @@ function Scooter({ scooter, deleteScooter}) {
                     <span className="badge badge-pill badge-secondary m-1 p-2">
                         Paspirtuko paskutinio naudojimo data: {scooter.last_use_time}
                     </span>
+                    <input type="text" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} className="form-control" style={{ width: "200px", height: "30px", textAlign: "center" }} onChange={(e) => control(e, "last_use_time")} value={useTime} />
+                    <small className="form-text text-muted">
+                        Įvesti naują datą
+                    </small>
                     <span className="badge badge-pill badge-secondary m-1 p-2">
                         Paspirtuko nuvažiuoti kilometrai  {(scooter.total_ride_kilometres)}
                     </span>
+                    <input type="text" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} className="form-control" style={{ textAlign: "center", width: "200px", height: "30px" }} onChange={(e) => control(e, "total_ride_kilometres")} value={ride} />
+                    <small className="form-text text-muted">
+                        Pakeisti pravažiuotus kilometrus
+                    </small>
                     <span className="badge badge-pill badge-secondary m-1 p-2">
                         Laisvas:  {scooter.is_busy}
                     </span>
+                    <small className="form-text text-muted">Laisvas/Užimtas?</small>
+                    <input className="form-control" onChange={isChecked} isChecked={isChecked} type="checkbox" style={{ width: "15px" }} />
                     <div className="form-group mt-3">
                         <button type="button" className="btn btn-danger m-1" onClick={() => deleteScooter(scooter.id)}>
                             Ištrinti
                         </button>
-                        <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <button type="button" className="btn btn-warning" onClick={() => edit(scooter.id)}>
                             Redaguoti duomenis
                         </button>
-                        <div class="collapse" id="collapseExample">
-                            <div class="card card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </>
     )
-
 }
 
 export default Scooter;

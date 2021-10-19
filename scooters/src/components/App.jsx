@@ -91,7 +91,7 @@ function App() {
         <>
             <h1 style={{ textAlign: "center", color: "lightgray", fontSize: "100px", textShadow: "1px 0 10px #694b4b" }}>Kolt paspirtukų nuoma</h1>
             <Top addScooter={addScooter} sort={sort} scootersCount={scootersCount} rideCount={rideCount}></Top>
-            <Scooters scooters={scooters} deleteScooter={deleteScooter}></Scooters>
+            <Scooters scooters={scooters} deleteScooter={deleteScooter} editScooter={editScooter}></Scooters>
         </>
 
     )
