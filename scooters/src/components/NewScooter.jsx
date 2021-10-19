@@ -39,7 +39,7 @@ function NewScooter({ addScooter }) {
     return (
         <>
             <form className="form-group new">
-            <h3>Naujas</h3>
+            <h4 style={{color:"lightgrey"}}>Naujas</h4>
                 <div className="form-row">
                     <div className=" col-form-label">
                         <input type="text" maxLength="8" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} onChange={(e) => control(e, "registration_code")} value={code} className="form-control" id="validationDefault01" placeholder="Registracijos numeris" required />

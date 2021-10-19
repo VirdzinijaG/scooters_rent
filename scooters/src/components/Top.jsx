@@ -6,7 +6,7 @@ function Top({ addScooter, sort, scootersCount, rideCount }) {
     return (
         <div className="Top">
             <div class="col-12 col-sm-12 col-md-7"><NewScooter addScooter={addScooter}></NewScooter>
-                <div className="container">
+                <div className="container sort">
                     <div className="row">
                         <div className="col">
                             {/* <div className="col-12 col-sm-6 col-md-8"> */}
