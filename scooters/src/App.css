@@ -22,3 +22,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.Top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
