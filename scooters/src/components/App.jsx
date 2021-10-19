@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Scooters from './Scooters';
+import Top from './Top';
+
 
 function App() {
 
@@ -55,11 +57,41 @@ function App() {
     };
 
 
+    // rusiavimas
+    const sort = by => {
+        const scootersCopy = scooters.slice();
+        if ('total_ride_kilometres' === by) {
+            scootersCopy.sort((a, b) => {
+                if (a.total_ride_kilometres > b.total_ride_kilometres) {
+                    return 1
+                }
+                if (a.total_ride_kilometres < b.total_ride_kilometres) {
+                    return -1
+                }
+                return 0
+            })
+            setScooters(scootersCopy)
+        }
+        if ("last_use_time" === by) {
+            scootersCopy.sort((a, b) => {
+                if (a.last_use_time > b.last_use_time) {
+                    return 1;
+                }
+                if (a.last_use_time < b.last_use_time) {
+                    return -1;
+                }
+                return 0;
+            });
+            setScooters(scootersCopy);
+        }
+    }
+
 
     return (
         <>
             <h1 style={{ textAlign: "center", color: "lightgray", fontSize: "100px", textShadow: "1px 0 10px #694b4b" }}>Kolt paspirtukų nuoma</h1>
-            <Scooters scooters={scooters}></Scooters>
+            <Top addScooter={addScooter} sort={sort} scootersCount={scootersCount} rideCount={rideCount}></Top>
+            <Scooters scooters={scooters} deleteScooter={deleteScooter}></Scooters>
         </>
 
     )

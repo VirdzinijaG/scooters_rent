@@ -1,7 +1,6 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: #dbcbd8;
   background: linear-gradient(170deg, #dbcbd8 0%, #2e4057 74%);
   height: 100%;
