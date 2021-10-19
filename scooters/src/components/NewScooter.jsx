@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../App.css";
 
 function NewScooter({ addScooter }) {
     const [code, setCode] = useState('');
@@ -37,17 +38,18 @@ function NewScooter({ addScooter }) {
 
     return (
         <>
-            <form>
-                <div className="form-row" style={{ marginTop: "50px" }}>
-                    <div className="col-sm-3 col-form-label">
+            <form className="form-group new">
+            <h3>Naujas</h3>
+                <div className="form-row">
+                    <div className=" col-form-label">
                         <input type="text" maxLength="8" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} onChange={(e) => control(e, "registration_code")} value={code} className="form-control" id="validationDefault01" placeholder="Registracijos numeris" required />
                         <small>Registracijos numeris</small>
                     </div>
-                    <div className="col-sm-3 col-form-label">
+                    <div className=" col-form-label">
                         <input type="date" onChange={(e) => control(e, "last_use_time")} value={useTime} className="form-control" id="validationDefault02" placeholder="Pakutinis naudojimo laikas" required />
                         <small>Data</small>
                     </div>
-                    <div className="col-sm-3 col-form-label">
+                    <div className=" col-form-label">
                         <input type="number" onChange={(e) => control(e, "total_ride_kilometres")} value={ride} className="form-control" id="validationDefault02" placeholder="Pravažiuoti kilometrai" required />
                         <small>Kilometrai</small>
                     </div>
