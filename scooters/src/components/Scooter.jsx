@@ -1,6 +1,7 @@
 import "../App.css";
 import logo from "../logo.png"
-function Scooter({ scooter, deleteScooter }) {
+
+function Scooter({ scooter, deleteScooter}) {
 
     const d = new Date(scooter.last_use_time);
     let month = "00" + (d.getMonth() + 1);
@@ -8,6 +9,7 @@ function Scooter({ scooter, deleteScooter }) {
     let day = "00" + d.getDate();
     day = day.substring(day.length - 2);
     scooter.last_use_time = `${d.getFullYear()}-${month}-${day}`;
+
 
     return (
         <>
