@@ -7,6 +7,8 @@ body {
   text-align: center;
 }
 
+
+/* korteles, kur atvaizduojami paspirtukai */
 .card {
   display: inline-block;
   margin: 10px;
@@ -16,12 +18,16 @@ body {
   background-color: seashell;
 }
 
+
+/* uzvedus pele ant korteles */
 .card:hover {
   border: 0.5px solid silver;
   padding: 10px;
   box-shadow: 5px 10px 10px gray;
 }
 
+
+/* korteles vidus */
 .card-body {
   display: flex;
   flex-direction: column;
