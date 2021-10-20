@@ -53,7 +53,9 @@ function NewScooter({ addScooter }) {
                         <input type="number" onChange={(e) => control(e, "total_ride_kilometres")} value={ride} className="form-control" id="validationDefault02" placeholder="Pravažiuoti kilometrai" required />
                         <small>Kilometrai</small>
                     </div>
-                    <button className="btn btn-primary m-1" type="submit" style={{ textAlign: "center", height: "45px" }} onClick={insert}>Įvesti naują paspirtuką</button>
+                    <div className="insertBtn">
+                        <button className="btn btn-primary m-1" type="submit" onClick={insert}>Įvesti naują paspirtuką</button>
+                    </div>
                 </div>
             </form>
         </div>
