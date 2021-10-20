@@ -24,7 +24,7 @@ function Top({ addScooter, sort, scootersCount, rideCount }) {
                     <div className="col">
                         {/* <div className="col-12 col-sm-6 col-md-8"> */}
                         <div className="card-body">
-                            <h5 className="card-title" style={{ color: "white" }}>Statistika</h5>
+                            <h5 className="card-title" style={{ color: "white", marginBottom: "20px" }}>Statistika</h5>
                             <h6 style={{ color: "white" }}>Paspirtukų kiekis: <span style={{ color: "white", fontWeight: 'bold', fontSize: "18px" }}>{scootersCount}</span></h6>
                             <h6 style={{ color: "white" }}>Nuvažiuoti kilometrai:<span style={{ color: "white", fontWeight: 'bold', fontSize: "18px" }}>{rideCount}</span></h6>
                         </div>

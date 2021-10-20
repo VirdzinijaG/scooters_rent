@@ -37,9 +37,9 @@ function NewScooter({ addScooter }) {
     };
 
     return (
-        <>
+        <div className="newScooter col-12 col-lg-12 ml-lg-12 col-sm-12 col-md-12 col-xl-12">
             <form className="form-group new">
-            <h4 style={{color:"lightgrey"}}>Įvesti naują paspirtuką</h4>
+                <h4 style={{ color: "lightgrey" }}>Įvesti naują paspirtuką</h4>
                 <div className="form-row">
                     <div className=" col-form-label">
                         <input type="text" maxLength="8" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} onChange={(e) => control(e, "registration_code")} value={code} className="form-control" id="validationDefault01" placeholder="Registracijos numeris" required />
@@ -56,7 +56,7 @@ function NewScooter({ addScooter }) {
                     <button className="btn btn-primary m-1" type="submit" style={{ textAlign: "center", height: "45px" }} onClick={insert}>Įvesti naują paspirtuką</button>
                 </div>
             </form>
-        </>
+        </div>
     )
 
 }
