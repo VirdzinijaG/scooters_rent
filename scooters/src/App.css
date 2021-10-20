@@ -49,6 +49,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* naujo ivedimo laukai */
 .new {
   display: flex;
   flex-direction: column;
@@ -58,6 +60,7 @@ body {
   text-align: center;
 }
 
+/* rusiavimas statistika */
 .sort {
   display: flex;
   flex-direction: row;
