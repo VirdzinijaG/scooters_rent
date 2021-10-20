@@ -33,11 +33,12 @@ body {
 }
 
 /* rusiuoti pagal ir statistika */
-.container {
+/* .container {
   display: flex;
   flex-direction: row;
-  width: 55%;
-}
+  /* width: 55%; */
+/* background-color: red;
+} */
 
 /* visas virsus su nauju ivedimu ir rusiavimu */
 .Top {
@@ -48,12 +49,11 @@ body {
 }
 
 /* rusiavimas statistika */
-.sort {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-}
+/* .sort {
+  display: inline-block;
+  float: left;
+  background-color: red;
+} */
 
 /* Naujo paspirtuko ivedimas */
 .newScooter {
@@ -66,5 +66,9 @@ body {
 }
 
 .insertBtn {
- margin-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.sortStatistic {
+  display: inline-block;
 }
