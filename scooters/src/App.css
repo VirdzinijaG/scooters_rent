@@ -35,6 +35,7 @@ body {
   align-items: center;
 }
 
+/* rusiuoti pagal ir statistika */
 .container {
   display: flex;
   flex-direction: row;
