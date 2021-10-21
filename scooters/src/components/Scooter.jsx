@@ -88,7 +88,7 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
                         Laisvas:  {scooter.is_busy}
                     </span>
                     <small className="form-text text-muted">Laisvas/Užimtas?</small>
-                    <input className="form-control" onChange={isChecked} isChecked={isChecked} type="checkbox" style={{ width: "15px" }} />
+                    <input className="form-control" type="checkbox" onChange={isChecked} isChecked={isChecked} type="checkbox" style={{ width: "15px" }} />
                     <div className="form-group mt-3">
                         <button type="button" className="btn btn-danger m-1" onClick={() => deleteScooter(scooter.id)}>
                             Ištrinti
