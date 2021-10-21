@@ -74,7 +74,7 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
                     <span className="badge badge-pill badge-secondary m-1 p-2">
                         Paspirtuko paskutinio naudojimo data: {scooter.last_use_time}
                     </span>
-                    <input type="text" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} className="form-control" style={{ width: "200px", height: "30px", textAlign: "center" }} onChange={(e) => control(e, "last_use_time")} value={useTime} />
+                    <input type="date" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} className="form-control" style={{ width: "200px", height: "30px", textAlign: "center" }} onChange={(e) => control(e, "last_use_time")} value={useTime} />
                     <small className="form-text text-muted">
                         Įvesti naują datą
                     </small>
