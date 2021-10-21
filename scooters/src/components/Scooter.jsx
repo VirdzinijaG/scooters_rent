@@ -29,11 +29,11 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
         }
     };
 
-
+    const sum = parseFloat(scooter.total_ride_kilometres) + parseFloat(ride)
     const edit = (id) => {
         editScooter(id, {
             last_use_time: useTime,
-            total_ride_kilometres: ride,
+            total_ride_kilometres: sum,
             is_busy: is_busy,
         });
         setUseTime("");
