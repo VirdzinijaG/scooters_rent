@@ -51,7 +51,6 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
         }
     };
 
-
     if (id === 0) {
         return null;
     }
