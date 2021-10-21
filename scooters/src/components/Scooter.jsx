@@ -29,6 +29,7 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
         }
     };
 
+
     const edit = (id) => {
         editScooter(id, {
             last_use_time: useTime,
@@ -38,6 +39,7 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
         setUseTime("");
         setRide("");
         setIsBusy(0);
+
     };
 
     const isChecked = () => {
@@ -48,17 +50,6 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
         }
     };
 
-    useEffect(() => {
-        if (scooter.is_busy === 0) {
-            setIsBusy(isChecked);
-        } else {
-            setIsBusy(false);
-        }
-    }, [scooter.is_busy]);
-
-    useEffect(() => {
-        setIsBusy(scooter.is_busy);
-    }, [scooter.is_busy]);
 
     if (id === 0) {
         return null;
@@ -91,7 +82,7 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
                     </span>
                     <input type="text" onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} className="form-control" style={{ textAlign: "center", width: "200px", height: "30px" }} onChange={(e) => control(e, "total_ride_kilometres")} value={ride} />
                     <small className="form-text text-muted">
-                        Pakeisti pravažiuotus kilometrus
+                        Įvesti pravažiuotus kilometrus
                     </small>
                     <span className="badge badge-pill badge-secondary m-1 p-2">
                         Laisvas:  {scooter.is_busy}
