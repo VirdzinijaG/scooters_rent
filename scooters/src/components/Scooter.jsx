@@ -9,8 +9,6 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
     const [ride, setRide] = useState('');
     const [is_busy, setIsBusy] = useState(0);
 
-
-
     useEffect(() => {
         setUseTime(scooter.last_use_time);
         setRide(scooter.total_ride_kilometres);
@@ -49,6 +47,18 @@ function Scooter({ scooter, deleteScooter, editScooter, id }) {
             setIsBusy(1);
         }
     };
+
+    useEffect(() => {
+        if (scooter.is_busy === 0) {
+            setIsBusy(isChecked);
+        } else {
+            setIsBusy(false);
+        }
+    }, [scooter.is_busy]);
+
+    useEffect(() => {
+        setIsBusy(scooter.is_busy);
+    }, [scooter.is_busy]);
 
     if (id === 0) {
         return null;
